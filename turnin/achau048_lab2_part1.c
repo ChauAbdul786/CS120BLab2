@@ -27,7 +27,7 @@ int main(void) {
 		if(tmpA == 0x01){ //xxxxxx01
 			tmpB = (tmpB & 0xFE) | 0x01; //BBBBBBB1
 		}else{
-			tmpB = (tmpB & 0xFE);
+			tmpB = (tmpB & 0xFE); //BBBBBBB0
 		}
 
 		PORTB = tmpB;
