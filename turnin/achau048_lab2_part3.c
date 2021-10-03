@@ -2,7 +2,7 @@
  *  Partner(s) Name: 
  *	Lab Section: 21
  *	Assignment: Lab #2  Exercise #3
- *	Exercise Description: Extension of Exercise #3, on top of writing to PORTC4 - PORTC0 the number of available spots, set PORTC7 to 1 if the lot is full. 
+ *	Exercise Description: Extension of Exercise #2, on top of writing to PORTC4 - PORTC0 the number of available spots, set PORTC7 to 1 if the lot is full. 
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  */
