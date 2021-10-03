@@ -1,7 +1,7 @@
 /*	Author: Abdullah Chaudhry
  *  Partner(s) Name: 
  *	Lab Section: 21
- *	Assignment: Lab #2  Exercise #1
+ *	Assignment: Lab #2  Exercise #2
  *	Exercise Description: Parking Lot Detector - PA3 - PA0 are parking spots(1 for occupied, 0 for vacant). Port C should reflect the number of open spots available in the lot.
  *
  *	I acknowledge all content contained herein, excluding template or example
