@@ -2,7 +2,7 @@
  *  Partner(s) Name: 
  *	Lab Section: 21
  *	Assignment: Lab #2  Exercise #1
- *	Exercise Description: Garage Door Sensor - PA0 is a door sensor(1 is open), PA1 is a light sensor(1 is light sensed). PB0 is an LED that will illuminate(1) is the door is open at night(Door open && No light).
+ *	Exercise Description: Parking Lot Detector - PA3 - PA0 are parking spots(1 for occupied, 0 for vacant). Port C should reflect the number of open spots available in the lot.
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
