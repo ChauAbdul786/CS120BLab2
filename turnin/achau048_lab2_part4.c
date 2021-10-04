@@ -50,6 +50,10 @@ int main(void) {
 			tmpD = (tmpD & 0xFD); //DDDD DD0D
 		}
 		
+		//Weight Estimation
+		totalWeight = totalWeight >> 2;
+		totalWeight = totalWeight & 0xFC; //WWWW WW00
+		tmpD = (tmpD | totalWeight); //WWWW WWDD
 
 		//Output
 		PORTD = tmpD;
