@@ -24,6 +24,8 @@ int main(void) {
 	unsigned char tmpB = 0x00; //To hold PINB
 	unsigned char tmpC = 0x00; //To hold PINC
 	unsigned char tmpD = 0x00; //To hold PORTD
+	unsigned char tmpD0 = 0x00; //To hold PORTD0
+	unsigned char tmpD1 = 0x00; //To hold PORTD1
 
 	unsigned short totalWeight = 0; //Unsigned short to hold total weight
 	signed short weightDifference = 0; //For weight difference between seats A and C
@@ -37,23 +39,27 @@ int main(void) {
 
 		totalWeight = tmpA + tmpB + tmpC;
 		if(totalWeight > 140){
-			tmpD = (tmpD | 0x01); //DDDD DDD1
+			//tmpD = (tmpD | 0x01); //DDDD DDD1
+			tmpD0 = 0x01;
 		}else{
-			tmpD = (tmpD & 0xFE); //DDDD DDD0
+			//tmpD = (tmpD & 0xFE); //DDDD DDD0
+			tmpD0 = 0x00;
 		}
 		
 		weightDifference = tmpA - tmpC;
 		if(weightDifference > 80 || weightDifference < -80){ //Need to check <-80 if seat
 									//C is heavier than seat A
-			tmpD = (tmpD | 0x02); //DDDD DD1D
+			//tmpD = (tmpD | 0x02); //DDDD DD1D
+			tmpD1 = 0x02;
 		}else{
-			tmpD = (tmpD & 0xFD); //DDDD DD0D
+			//tmpD = (tmpD & 0xFD); //DDDD DD0D
+			tmpD1 = 0x00;
 		}
 		
 		//Weight Estimation
 		totalWeight = totalWeight >> 2;
 		totalWeight = totalWeight & 0xFC; //WWWW WW00
-		tmpD = (tmpD | totalWeight); //WWWW WWDD
+		tmpD = (totalWeight | tmpD1 | tmpD0); //WWWW WWDD
 
 		//Output
 		PORTD = tmpD;
